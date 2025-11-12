@@ -6,7 +6,7 @@ import { zodiacSigns } from "@/data/zodiacSigns";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Sparkles, Users, FileText } from "lucide-react";
+import { Sparkles, Users, FileText, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Index = () => {
@@ -29,7 +29,7 @@ const Index = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           <Card className="hover-lift border-2">
             <CardHeader>
@@ -53,6 +53,19 @@ const Index = () => {
             <CardContent>
               <Button asChild className="w-full" variant="secondary">
                 <Link to="/kundli">Create Your Kundli</Link>
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="hover-lift border-2 bg-gradient-to-br from-accent/10 to-primary/10">
+            <CardHeader>
+              <BookOpen className="h-8 w-8 text-primary mb-2" />
+              <CardTitle className="font-serif">Learn Astrology</CardTitle>
+              <CardDescription>Master houses, planets & dashas</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button asChild className="w-full" variant="default">
+                <Link to="/learn">Start Learning</Link>
               </Button>
             </CardContent>
           </Card>

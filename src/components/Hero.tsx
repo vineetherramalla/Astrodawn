@@ -2,12 +2,16 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Moon, Sun } from "lucide-react";
+import CosmicParticles from "./CosmicParticles";
 
 const Hero = () => {
   return (
     <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-hero">
+      {/* Cosmic Particles Background */}
+      <CosmicParticles />
+      
       {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-0">
         <motion.div
           className="absolute top-20 left-[10%] text-primary/20"
           animate={{

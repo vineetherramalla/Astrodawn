@@ -8,6 +8,10 @@ import Index from "./pages/Index";
 import Horoscopes from "./pages/Horoscopes";
 import HoroscopeDetail from "./pages/HoroscopeDetail";
 import Kundli from "./pages/Kundli";
+import Learn from "./pages/Learn";
+import LearnHouses from "./pages/LearnHouses";
+import LearnPlanets from "./pages/LearnPlanets";
+import LearnDashas from "./pages/LearnDashas";
 import Astrologers from "./pages/Astrologers";
 import Articles from "./pages/Articles";
 import Contact from "./pages/Contact";
@@ -27,6 +31,10 @@ const App = () => (
             <Route path="/horoscopes" element={<Horoscopes />} />
             <Route path="/horoscopes/:signId" element={<HoroscopeDetail />} />
             <Route path="/kundli" element={<Kundli />} />
+            <Route path="/learn" element={<Learn />} />
+            <Route path="/learn/houses" element={<LearnHouses />} />
+            <Route path="/learn/planets" element={<LearnPlanets />} />
+            <Route path="/learn/dashas" element={<LearnDashas />} />
             <Route path="/astrologers" element={<Astrologers />} />
             <Route path="/articles" element={<Articles />} />
             <Route path="/contact" element={<Contact />} />

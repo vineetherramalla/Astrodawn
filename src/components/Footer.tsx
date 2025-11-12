@@ -11,7 +11,7 @@ const Footer = () => {
     Services: [
       { name: "Kundli Generator", path: "/kundli" },
       { name: "Consult Astrologers", path: "/astrologers" },
-      { name: "Birth Chart", path: "/kundli" },
+      { name: "Learn Astrology", path: "/learn" },
     ],
     Resources: [
       { name: "Astrology Articles", path: "/articles" },
