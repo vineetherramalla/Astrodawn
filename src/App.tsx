@@ -12,8 +12,8 @@ import Learn from "./pages/Learn";
 import LearnHouses from "./pages/LearnHouses";
 import LearnPlanets from "./pages/LearnPlanets";
 import LearnDashas from "./pages/LearnDashas";
-import Astrologers from "./pages/Astrologers";
 import Articles from "./pages/Articles";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -35,7 +35,7 @@ const App = () => (
             <Route path="/learn/houses" element={<LearnHouses />} />
             <Route path="/learn/planets" element={<LearnPlanets />} />
             <Route path="/learn/dashas" element={<LearnDashas />} />
-            <Route path="/astrologers" element={<Astrologers />} />
+            <Route path="/about" element={<About />} />
             <Route path="/articles" element={<Articles />} />
             <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

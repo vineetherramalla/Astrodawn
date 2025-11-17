@@ -9,7 +9,7 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Cosmic color palette */
-    --background: 42 100% 91%;
+    --background: 0 0% 100%;
     --foreground: 195 89% 28%;
 
     --card: 0 0% 100%;
@@ -23,8 +23,8 @@ All colors MUST be HSL.
     --primary-foreground: 42 100% 91%;
 
     /* Cerulean as secondary */
-    --secondary: 195 89% 28%;
-    --secondary-foreground: 42 100% 91%;
+    --secondary: 247 64% 18%;
+    --secondary-foreground: 42 19% 95%;
 
     --muted: 42 50% 85%;
     --muted-foreground: 195 50% 40%;
@@ -93,10 +93,55 @@ All colors MUST be HSL.
   }
   
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
   }
   
   .glow-primary {
     box-shadow: var(--shadow-glow);
+  }
+  
+  /* Enhanced text visibility */
+  .text-prominent {
+    @apply font-semibold text-foreground;
+  }
+  
+  .text-description {
+    @apply text-foreground/75 leading-relaxed;
+  }
+  
+  .text-muted-light {
+    @apply text-foreground/60;
+  }
+  
+  /* Card enhancements */
+  .card-enhanced {
+    @apply border-2 shadow-lg hover:shadow-xl transition-all;
+  }
+  
+  .card-gradient {
+    @apply border-2 bg-gradient-to-br from-background to-muted/20;
+  }
+  
+  /* Button enhancements */
+  .btn-cosmic {
+    @apply bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all;
+  }
+  
+  /* Section spacing improvements */
+  .section-padding {
+    @apply py-20 px-4;
+  }
+  
+  /* Improved heading styles */
+  .heading-primary {
+    @apply text-4xl md:text-5xl font-serif font-bold text-foreground;
+  }
+  
+  .heading-secondary {
+    @apply text-3xl md:text-4xl font-serif font-bold text-foreground;
+  }
+  
+  .heading-tertiary {
+    @apply text-2xl font-serif font-bold text-foreground;
   }
 }

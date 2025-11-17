@@ -11,10 +11,10 @@ interface HoroscopeCardProps {
 
 const HoroscopeCard = ({ sign, type = "daily", index = 0 }: HoroscopeCardProps) => {
   const elementColors = {
-    Fire: "from-destructive/20 to-accent/20",
-    Earth: "from-secondary/20 to-primary/20",
-    Air: "from-primary/20 to-accent/20",
-    Water: "from-primary/30 to-secondary/30",
+    Fire: "from-destructive/20 via-accent/15 to-accent/20",
+    Earth: "from-secondary/20 via-primary/15 to-primary/20",
+    Air: "from-primary/20 via-accent/15 to-accent/20",
+    Water: "from-primary/30 via-secondary/20 to-secondary/30",
   };
 
   return (
@@ -22,27 +22,28 @@ const HoroscopeCard = ({ sign, type = "daily", index = 0 }: HoroscopeCardProps) 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05 }}
-      whileHover={{ y: -5 }}
+      whileHover={{ y: -8 }}
     >
       <Link to={`/horoscopes/${sign.id}?type=${type}`}>
-        <Card className={`hover-lift cursor-pointer border-2 bg-gradient-to-br ${elementColors[sign.element as keyof typeof elementColors]}`}>
-          <CardHeader>
+        <Card className={`hover-lift cursor-pointer border-2 shadow-lg bg-gradient-to-br ${elementColors[sign.element as keyof typeof elementColors]} group transition-all`}>
+          <CardHeader className="pb-3">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-2xl font-serif flex items-center gap-2">
-                <span className="text-4xl">{sign.symbol}</span>
-                {sign.name}
+              <CardTitle className="text-2xl font-serif flex items-center gap-3 text-foreground">
+                <span className="text-4xl drop-shadow-md group-hover:scale-110 transition-transform">{sign.symbol}</span>
+                <span className="font-bold">{sign.name}</span>
               </CardTitle>
             </div>
-            <CardDescription className="text-sm">
+            <CardDescription className="text-sm text-foreground/70 font-medium">
               {sign.dates} • {sign.element}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Ruled by {sign.ruler}
+            <p className="text-sm text-foreground/75 font-medium mb-3">
+              ♦ Ruled by <span className="text-primary font-semibold">{sign.ruler}</span>
             </p>
-            <p className="mt-2 text-sm font-medium text-primary">
-              Read your {type} horoscope →
+            <p className="text-sm font-semibold text-primary group-hover:text-accent transition-colors flex items-center gap-2">
+              Read your {type} horoscope 
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </p>
           </CardContent>
         </Card>
